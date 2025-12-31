@@ -246,6 +246,7 @@ public final class CppPotionHelper {
                     z7 = true;
                     continue;
                 }
+
                 //位数
                 flag *= 10;
                 flag += thisChar - 48;
@@ -278,21 +279,19 @@ public final class CppPotionHelper {
                 case 63:
                     operation = 2;
                     break;
-                case 43:
-                default:
-                    if (!needsValueUpdate) {
-                        break;
-                    }
-                    i14 += updateEffectWeigh(z9, z7, z10, operation, flag, i13, potionData);
-                    z9 = false;
-                    z10 = false;
-                    z6 = false;
-                    z7 = false;
-                    needsValueUpdate = false;
-                    i13 = 0;
-                    flag = 0;
-                    break;
             }
+
+            if (!needsValueUpdate) {
+                break;
+            }
+            i14 += updateEffectWeigh(z9, z7, z10, operation, flag, i13, potionData);
+            z9 = false;
+            z10 = false;
+            z6 = false;
+            z7 = false;
+            needsValueUpdate = false;
+            i13 = 0;
+            flag = 0;
         }
 
         if (needsValueUpdate) {//更新最后一组属性
